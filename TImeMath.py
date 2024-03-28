@@ -28,7 +28,10 @@ start_time = time.time()
 for i in range(10):
     exp, answer = Problem_Generator()
     while True:
-        ans = int(input("#Problem"+str(i+1)+" "+exp))
+        try:
+            ans = int(input("#Problem"+str(i+1)+" "+exp))
+        except:
+            continue
         if ans == answer:
             break
         print("try again")
